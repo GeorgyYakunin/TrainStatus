@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp">
+
+    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/station_change"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        app:txttype="@string/medium" />
+
+    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+        android:id="@+id/tv_search_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/you_searched_for_trains_between_ndls_and_mas"
+        android:textSize="13sp"
+        app:txttype="@string/regular" />
+
+    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+        android:id="@+id/tv_error_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/but_this_train_travel_between_nzm"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:txttype="@string/regular" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp">
+
+        <ImageView
+            android:id="@+id/iv_dot1"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:padding="2.0dip"
+            android:src="@drawable/ic_fill_dot"
+            android:tint="@color/red" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="3.0dip"
+            android:layout_marginTop="6dp"
+            android:layout_toLeftOf="@+id/iv_dot2"
+            android:layout_toRightOf="@+id/iv_dot1"
+            android:background="@drawable/bg_dash_line"
+            android:layerType="software" />
+
+        <ImageView
+            android:id="@+id/iv_dot2"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_fill_dot"
+            android:tint="@color/bright_purple" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="3.0dip"
+            android:layout_marginTop="6dp"
+            android:layout_toLeftOf="@+id/iv_dot3"
+            android:layout_toRightOf="@+id/iv_dot2"
+            android:background="@color/dark_purple" />
+
+        <ImageView
+            android:id="@+id/iv_dot3"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_fill_dot"
+            android:tint="@color/bright_purple" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp">
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_point1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ndls"
+            app:txttype="@string/regular" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_point2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/nzm"
+            app:txttype="@string/regular" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_point3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/mas"
+            app:txttype="@string/regular" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="22dp">
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bg_round_corner_blue"
+            android:gravity="center_vertical"
+            android:paddingLeft="22dp"
+            android:paddingTop="0.0dip"
+            android:paddingRight="22dp"
+            android:paddingBottom="0.0dip"
+            android:text="@string/back"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:txttype="@string/medium" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="0.0dip"
+            android:background="@drawable/bg_round_corner_blue"
+            android:gravity="center_vertical"
+            android:paddingLeft="22dp"
+            android:paddingTop="0.0dip"
+            android:paddingRight="22dp"
+            android:paddingBottom="0.0dip"
+            android:text="@string/ok_go_ahead"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:txttype="@string/medium" />
+    </RelativeLayout>
+</LinearLayout>

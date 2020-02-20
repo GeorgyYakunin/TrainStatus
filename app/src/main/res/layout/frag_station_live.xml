@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_squre_white"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:src="@drawable/ic_back" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/iv_back"
+            android:text="@string/live_station"
+            android:textColor="@color/medium_dark_grey"
+            android:textSize="@dimen/header_txt"
+            app:txttype="@string/medium" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_data"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/ll_st_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/ll_des_lbl"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_squre_white"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_dest_st"
+                    android:layout_width="fill_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginRight="22dp">
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_dest_st"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:hint="@string/enter_destination_station"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="14dp"
+                        app:txttype="@string/regular" />
+                </androidx.cardview.widget.CardView>
+
+                <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                    android:id="@+id/tv_junction"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginBottom="12dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:txttype="@string/regular" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_live_st"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/ll_des_lbl"
+                android:background="@color/white" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3.0dip"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/bg_squre_white">
+
+                <ImageView
+                    android:id="@+id/iv_back_search"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="6dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_back" />
+
+                <com.Example.IRCTCWhereismyTrain.widget.MyEditText
+                    android:id="@+id/et_des_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/iv_back_search"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:hint="@string/station_name_code"
+                    android:maxLines="1"
+                    android:paddingRight="12dp"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_search"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="12dp"
+                android:visibility="gone" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_popular_lable"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="0.0dip"
+                android:layout_marginRight="12dp"
+                android:drawablePadding="14dp"
+                android:gravity="center_vertical"
+                android:text="@string/popular_search"
+                android:textAllCaps="true"
+                android:textColor="#ff1d1c1c"
+                android:textSize="13sp"
+                android:visibility="visible"
+                app:txttype="@string/medium" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular_search"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="42dp"
+                android:paddingTop="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/layout_no_data"
+        layout="@layout/layout_data_didnt_found"
+        android:visibility="gone" />
+</LinearLayout>

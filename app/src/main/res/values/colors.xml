@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="app_bg">#fff2f2f2</color>
+    <color name="app_header_bg">#ffffffff</color>
+    <color name="app_header_txt">#ff4a4a4a</color>
+    <color name="background">#ff4b4b4b</color>
+
+    <color name="black">#ff000000</color>
+
+    <color name="browser_actions_bg_grey">#fff5f5f5</color>
+    <color name="browser_actions_divider_color">#1e000000</color>
+    <color name="browser_actions_text_color">#de000000</color>
+    <color name="browser_actions_title_color">#ff646464</color>
+
+    <color name="cardview_dark_background">#ff424242</color>
+    <color name="cardview_light_background">#ffffffff</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
+    <color name="colorAccent">#00FFB8</color>
+    <color name="colorPrimary">#00FFB8</color>
+    <color name="colorPrimaryDark">#00FFB8</color>
+
+    <color name="currentMonthDayColor">#de000000</color>
+    <color name="daysLabelColor">#8a000000</color>
+    <color name="defaultColor">#ff5F8AFF</color>
+    <color name="design_bottom_navigation_shadow_color">#14000000</color>
+    <color name="design_default_color_primary">#ff6F80DA</color>
+    <color name="design_default_color_primary_dark">#ff6372CF</color>
+    <color name="design_fab_shadow_end_color">@android:color/transparent</color>
+    <color name="design_fab_shadow_mid_color">#14000000</color>
+    <color name="design_fab_shadow_start_color">#44000000</color>
+    <color name="design_fab_stroke_end_inner_color">#0a000000</color>
+    <color name="design_fab_stroke_end_outer_color">#0f000000</color>
+    <color name="design_fab_stroke_top_inner_color">#1affffff</color>
+    <color name="design_fab_stroke_top_outer_color">#2effffff</color>
+    <color name="design_snackbar_background_color">#ff323232</color>
+
+    <color name="disabledDialogButtonColor">#1f000000</color>
+    <color name="end_gradient_color">#ff06FF7A</color>
+
+    <color name="grey_200">#ffeeeeee</color>
+    <color name="grey_400">#ffbdbdbd</color>
+    <color name="grey_500">#ff9e9e9e</color>
+
+    <color name="itemFocusedColor">#1a000000</color>
+    <color name="itemHighlightColor">#1f000000</color>
+    <color name="item_select">#30BF98</color>
+    <color name="item_unselect">#ff036868</color>
+
+    <color name="mtrl_btn_bg_color_disabled">#1f000000</color>
+    <color name="mtrl_btn_text_color_disabled">#61000000</color>
+    <color name="mtrl_btn_transparent_bg_color">#00ffffff</color>
+    <color name="mtrl_scrim_color">#52000000</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#6b000000</color>
+    <color name="mtrl_textinput_disabled_color">#1f000000</color>
+    <color name="mtrl_textinput_filled_box_default_background_color">#0a000000</color>
+    <color name="mtrl_textinput_hovered_box_stroke_color">#de000000</color>
+    <color name="nextMonthDayColor">#1f000000</color>
+
+    <color name="notification_material_background_media_default_color">#ff424242</color>
+
+    <color name="rate">#ffECE047</color>
+    <color name="rippelColor">#ff39BBE6</color>
+    <color name="start_gradient_color">#ffFFB60B</color>
+    <color name="sub_title_txt">#ff030303</color>
+    <color name="txt_color_secondary">#ff535353</color>
+    <color name="white">#ffffffff</color>
+    <color name="dark_grey">#ff4B4B4B</color>
+    <color name="medium_dark_grey">#ffA5A5A5</color>
+    <color name="medium_grey">#ff575757</color>
+    <color name="light_grey">#ff8B8B8B</color>
+    <color name="medium_light_grey">#ff7C7C7C</color>
+    <color name="lighter_grey">#ffC4C4C4</color>
+    <color name="bright_red">#ff474747</color>
+    <color name="red">#BF5C5C</color>
+    <color name="bright_purple">#C500B5</color>
+    <color name="dark_purple">#47345B</color>
+    <color name="light_bluegreen">#8BA4C7</color>
+    <color name="bluegreen">#3B8984</color>
+    <color name="medium_bluegreen">#3B8984</color>
+    <color name="light_pink">#DBA67B</color>
+    <color name="soft_red">#E28E48</color>
+    <color name="dirty_white">#F3F3F3</color>
+    <color name="dirty_white_2">#DCDCDC</color>
+    <color name="dirty_grey">#BEB9B4</color>
+    <color name="soft_green">#264683</color>
+    <color name="lighter_green">#C3DCEF</color>
+</resources>

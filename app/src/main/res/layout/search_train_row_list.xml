@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_city"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingBottom="14dp">
+
+    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+        android:id="@+id/tv_city_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/tv_code"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingRight="6dp"
+        android:text="@string/delhi"
+        android:textColor="@color/medium_dark_grey"
+        android:textSize="19sp"
+        app:txttype="@string/regular" />
+
+    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+        android:id="@+id/tv_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="@string/dli"
+        android:textColor="@color/medium_light_grey"
+        android:textSize="17sp"
+        android:visibility="visible"
+        app:txttype="@string/regular" />
+
+    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+        android:id="@+id/tv_station_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_city_name"
+        android:text="@string/old_delhi_railway_station"
+        android:textColor="@color/medium_light_grey"
+        app:txttype="@string/regular" />
+</RelativeLayout>

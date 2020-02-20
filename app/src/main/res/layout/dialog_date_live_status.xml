@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="22dp">
+
+    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+        android:id="@+id/tv_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="22dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="12dp"
+        android:text="@string/select_train_starting_date"
+        android:textAllCaps="true"
+        android:textColor="@color/lighter_grey"
+        android:textSize="13sp"
+        app:txttype="@string/regular" />
+
+    <LinearLayout
+        android:id="@+id/ll_day_before"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="12dp">
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_day_befor_lbl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:text="@string/day_before_yesterday"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:txttype="@string/regular" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_day_befor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_day_befor_lbl"
+            android:text="@string/date_example"
+            android:textColor="@color/medium_light_grey"
+            android:textSize="13sp"
+            app:txttype="@string/regular" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_yesterday"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_yester_lbl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/yesterday"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:txttype="@string/regular" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_yester"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_example"
+            android:textColor="@color/medium_light_grey"
+            android:textSize="13sp"
+            app:txttype="@string/regular" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_today"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_today_lbl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/today"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:txttype="@string/regular" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_today"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_example"
+            android:textColor="@color/medium_light_grey"
+            android:textSize="13sp"
+            app:txttype="@string/regular" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tommorr"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_tommorr_lbl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/tomorrow"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:txttype="@string/regular" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_tommorr"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_example"
+            android:textColor="@color/medium_light_grey"
+            android:textSize="13sp"
+            app:txttype="@string/regular" />
+    </LinearLayout>
+</LinearLayout>

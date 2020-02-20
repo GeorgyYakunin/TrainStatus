@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_main"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg_squre_boder_white"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:tag="1">
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:minWidth="92dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="@string/sleeper"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:txttype="@string/medium" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_lazzy_loader_bg"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:minWidth="54dp"
+            android:text="@string/tap_to_update"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:txttype="@string/medium" />
+
+        <View
+            android:id="@+id/v_select"
+            android:layout_width="fill_parent"
+            android:layout_height="4.0dip"
+            android:layout_marginLeft="1.0dip"
+            android:layout_marginRight="1.0dip"
+            android:layout_marginBottom="0.0dip"
+            android:background="#ff088cfc"
+            android:visibility="invisible" />
+    </LinearLayout>
+</LinearLayout>

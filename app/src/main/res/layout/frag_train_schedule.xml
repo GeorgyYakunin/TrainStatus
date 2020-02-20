@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_train"
+        android:layout_width="fill_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_squre_white"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:src="@drawable/ic_back" />
+
+        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/iv_back"
+            android:text="@string/train_route_and_schedule"
+            android:textColor="@color/medium_dark_grey"
+            android:textSize="@dimen/header_txt"
+            app:txttype="@string/medium" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv_data"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_train"
+        android:layout_alignParentStart="true"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:paddingLeft="22dp"
+                android:paddingRight="22dp">
+
+                <ImageView
+                    android:id="@+id/iv_train_img"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_blue_circle_gradient"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_train_status" />
+
+                <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                    android:id="@+id/tv_train_id"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_train_img"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    app:txttype="@string/medium" />
+
+                <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                    android:id="@+id/tv_train_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_train_id"
+                    android:layout_toRightOf="@+id/iv_train_img"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textColor="#ff323232"
+                    android:textSize="13sp"
+                    app:txttype="@string/regular" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:background="@color/dirty_white" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="22dp"
+                app:cardCornerRadius="3.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/runs_on"
+                            android:textSize="13sp"
+                            app:txttype="@string/regular" />
+
+                        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                            android:id="@+id/tv_train_day"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="@color/soft_green"
+                            android:textSize="13sp"
+                            app:txttype="@string/medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/classes"
+                            android:textSize="13sp"
+                            app:txttype="@string/regular" />
+
+                        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                            android:id="@+id/tv_train_class"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            app:txttype="@string/medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/total_duration"
+                            android:textSize="13sp"
+                            app:txttype="@string/regular" />
+
+                        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                            android:id="@+id/tv_train_dur"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="@color/medium_dark_grey"
+                            android:textSize="13sp"
+                            app:txttype="@string/medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/number_of_stop"
+                            android:textSize="13sp"
+                            app:txttype="@string/regular" />
+
+                        <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                            android:id="@+id/tv_num_stop"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="@color/medium_dark_grey"
+                            android:textSize="13sp"
+                            app:txttype="@string/medium" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip"
+                        android:background="@color/dirty_white" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip"
+                        android:background="@color/dirty_white" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip"
+                        android:background="@color/dirty_white" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/ll_train_schd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="14dp"
+                android:text="@string/disclaimer"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:txttype="@string/medium" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_disclam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="22dp"
+                android:paddingLeft="14dp"
+                android:text=""
+                android:textColor="#ff2c2c2c"
+                android:textSize="13sp"
+                app:txttype="@string/regular" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/layout_no_data"
+        layout="@layout/layout_data_didnt_found"
+        android:visibility="gone" />
+</RelativeLayout>

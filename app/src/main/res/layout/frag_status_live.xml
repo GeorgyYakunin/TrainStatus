@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.Example.IRCTCWhereismyTrain.widget.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    app:umanoDragView="@+id/dragView"
+    app:umanoOverlay="true"
+    app:umanoPanelHeight="60.0dip"
+    app:umanoParallaxOffset="60.0dip"
+    app:umanoShadowHeight="0.0dip">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/app_bg"
+        android:paddingBottom="12dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="fill_parent"
+            android:layout_height="66dp"
+            android:layout_marginRight="3.0dip"
+            android:background="@drawable/bg_squre_white">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_back"
+                android:tint="@color/medium_dark_grey" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_toLeftOf="@+id/iv_refresh"
+                android:layout_toRightOf="@+id/iv_back"
+                android:text="@string/live_train_status"
+                android:textColor="@color/medium_dark_grey"
+                android:textSize="@dimen/header_txt"
+                app:txttype="@string/medium" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_last_update"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginTop="3.0dip"
+                android:layout_toLeftOf="@+id/iv_refresh"
+                android:layout_toRightOf="@+id/iv_back"
+                android:text="@string/last_update_example" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="3.0dip"
+                android:src="@drawable/ic_share" />
+
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:layout_toLeftOf="@+id/iv_share"
+                android:padding="2.0dip"
+                android:src="@drawable/ic_refresh" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_header"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bg_squre_white"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/iv_train_img"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_blue_circle_gradient"
+                android:padding="12dp"
+                android:src="@drawable/ic_train_status" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_train_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:layout_toLeftOf="@+id/iv_info"
+                android:layout_toRightOf="@+id/iv_train_img"
+                android:text=""
+                android:textColor="@color/medium_dark_grey"
+                android:textSize="15sp"
+                app:txttype="@string/regular" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_train_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_train_id"
+                android:layout_marginRight="6dp"
+                android:layout_toLeftOf="@+id/iv_info"
+                android:layout_toRightOf="@+id/iv_train_img"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="#ff1a1a1a"
+                android:textSize="13sp"
+                app:txttype="@string/regular" />
+
+            <ImageView
+                android:id="@+id/iv_info"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:padding="2.0dip"
+                android:src="@drawable/ic_info" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_date"
+            android:layout_width="fill_parent"
+            android:layout_height="54dp"
+            android:layout_below="@+id/rl_title"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="3.0dip"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bg_squre_white"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp">
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/starting"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:txttype="@string/regular" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_search_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@+id/tv_start"
+                android:drawableRight="@drawable/ic_down_drop"
+                android:drawablePadding="6dp"
+                android:gravity="center|right"
+                android:text=""
+                android:textColor="@color/item_select"
+                android:textSize="17sp"
+                app:txttype="@string/regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recycle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/rl_date"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="3.0dip"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bg_squre_white"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_status"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/dragView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="false"
+        android:orientation="vertical"
+        android:paddingTop="12dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rl_header_g"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_green_panel"
+            android:minHeight="64dp"
+            android:visibility="visible">
+
+            <com.skyfishjy.library.RippleBackground
+                android:id="@+id/rpb_clock_g"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/transparent"
+                app:rb_color="@color/light_bluegreen"
+                app:rb_duration="1300"
+                app:rb_radius="12.0dip"
+                app:rb_rippleAmount="4"
+                app:rb_scale="2.0">
+
+                <ImageView
+                    android:id="@+id/iv_train_g"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="0.0dip"
+                    android:layout_marginTop="0.0dip"
+                    android:layout_marginRight="12dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_clock"
+                    android:visibility="visible" />
+            </com.skyfishjy.library.RippleBackground>
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_train_status_g"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_toLeftOf="@+id/iv_down_arrow_g"
+                android:layout_toRightOf="@+id/rpb_clock_g"
+                android:ellipsize="end"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"
+                android:text=""
+                android:textColor="@color/bluegreen"
+                android:textSize="13sp"
+                app:txttype="@string/regular" />
+
+            <ImageView
+                android:id="@+id/iv_down_arrow_g"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="14dp"
+                android:padding="2.0dip"
+                android:src="@drawable/ic_down_arrow1"
+                android:tint="@color/light_bluegreen" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_header_r"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_green_panel"
+            android:minHeight="64dp"
+            android:visibility="gone">
+
+            <com.skyfishjy.library.RippleBackground
+                android:id="@+id/rpb_clock_r"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/transparent"
+                android:visibility="visible"
+                app:rb_color="@color/light_pink"
+                app:rb_duration="1300"
+                app:rb_radius="12.0dip"
+                app:rb_rippleAmount="4"
+                app:rb_scale="2.0">
+
+                <ImageView
+                    android:id="@+id/iv_train_r"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="0.0dip"
+                    android:layout_marginTop="0.0dip"
+                    android:layout_marginRight="12dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_clock"
+                    android:tint="@color/soft_red"
+                    android:visibility="visible" />
+            </com.skyfishjy.library.RippleBackground>
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_train_status_r"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3.0dip"
+                android:layout_toLeftOf="@+id/iv_down_arrow_r"
+                android:layout_toRightOf="@+id/rpb_clock_r"
+                android:ellipsize="end"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"
+                android:text=""
+                android:textColor="@color/light_pink"
+                android:textSize="13sp"
+                app:txttype="@string/regular" />
+
+            <ImageView
+                android:id="@+id/iv_down_arrow_r"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="14dp"
+                android:padding="2.0dip"
+                android:src="@drawable/ic_down_arrow1"
+                android:tint="@color/light_pink" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="22dp">
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_trian_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="14dp"
+                android:text="12621"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:txttype="@string/regular" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_trian_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_toLeftOf="@+id/iv_ref"
+                android:layout_toRightOf="@+id/tv_trian_id"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/tami"
+                android:textAllCaps="true"
+                android:textColor="@color/medium_light_grey"
+                android:textSize="13sp" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_update_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_trian_id"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="3.0dip"
+                android:text="@string/last_update"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:txttype="@string/regular" />
+
+            <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                android:id="@+id/tv_update_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_trian_name"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="3.0dip"
+                android:layout_toLeftOf="@+id/iv_ref"
+                android:layout_toRightOf="@+id/tv_update_label"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/data_example" />
+
+            <ImageView
+                android:id="@+id/iv_ref"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_refresh" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_update_label"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/bg_squre_white"
+                android:paddingBottom="14dp">
+
+                <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                    android:id="@+id/tv_botm_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/start_on"
+                    android:textColor="@color/medium_dark_grey"
+                    android:textSize="13sp"
+                    app:txttype="@string/regular" />
+
+                <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                    android:id="@+id/tv_start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_toRightOf="@+id/tv_botm_start"
+                    android:gravity="right"
+                    android:text="@string/date_example_2"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:txttype="@string/regular" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_train_distn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="92dp"
+                    android:layout_below="@+id/tv_botm_start"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_parple_gradient">
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_start_station"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:paddingLeft="12dp"
+                        android:text="@string/chennai_central"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        app:txttype="@string/medium" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_end_station"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="22dp"
+                        android:layout_toRightOf="@+id/tv_start_station"
+                        android:gravity="right"
+                        android:paddingRight="12dp"
+                        android:text="@string/new_delhi"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        app:txttype="@string/medium" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_start_km"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_start_station"
+                        android:paddingLeft="12dp"
+                        android:text="@string/zero_km"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        app:txttype="@string/medium" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_end_km"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_end_station"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="12dp"
+                        android:text="@string/many_km"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        app:txttype="@string/medium" />
+
+                    <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/sb_distance"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_start_km"
+                        android:layout_marginRight="12dp"
+                        android:max="102"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/progressseek" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_below="@+id/tv_start_km"
+                        android:layout_marginLeft="6dp"
+                        android:padding="2.0dip"
+                        android:src="@drawable/ic_fill_dot"
+                        android:tint="#ff3a21ad" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_below="@+id/tv_start_km"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:padding="2.0dip"
+                        android:src="@drawable/ic_dot"
+                        android:tint="@color/white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_nxt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_train_distn"
+                    android:paddingTop="12dp">
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_next_labl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:paddingLeft="12dp"
+                        android:text="@string/next_statiom"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_nxt_station"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:layout_toRightOf="@+id/tv_next_labl"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:maxLines="1"
+                        android:text="@string/itarasi_junction"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_plateform"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_nxt_station"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/bg_round_squre_red"
+                        android:paddingLeft="12dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="12dp"
+                        android:paddingBottom="6dp"
+                        android:text="@string/platform_1"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_nxt_stat_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_nxt_station"
+                        android:layout_marginTop="6dp"
+                        android:layout_toLeftOf="@+id/tv_plateform"
+                        android:text="@string/date_example_2"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="13sp" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_dep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_plateform"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_toLeftOf="@+id/tv_nxt_schd"
+                        android:text="@string/dep_time"
+                        android:textColor="@color/medium_bluegreen"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_nxt_schd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_plateform"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="12dp"
+                        android:text="@string/sch_time"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip"
+                        android:layout_below="@+id/tv_dep"
+                        android:layout_marginTop="22dp"
+                        android:background="#ffbebdbd" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_last"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_nxt"
+                    android:paddingTop="12dp">
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_last_labl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:paddingLeft="12dp"
+                        android:text="@string/last_station"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_last_station"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:layout_toRightOf="@+id/tv_last_labl"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:maxLines="1"
+                        android:text="@string/itarasi_junction"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_last_plateform"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_last_station"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/bg_round_squre_red"
+                        android:paddingLeft="12dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="12dp"
+                        android:paddingBottom="6dp"
+                        android:text="@string/platform_1"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_last_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_last_station"
+                        android:layout_marginTop="6dp"
+                        android:layout_toLeftOf="@+id/tv_last_plateform"
+                        android:text="@string/date_example_2"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="13sp" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_last_dep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_last_plateform"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_toLeftOf="@+id/tv_last_schd"
+                        android:text="@string/dep_time"
+                        android:textColor="@color/medium_bluegreen"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+
+                    <com.Example.IRCTCWhereismyTrain.widget.MyTextView
+                        android:id="@+id/tv_last_schd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_last_plateform"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="12dp"
+                        android:text="@string/sch_time"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:txttype="@string/regular" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</com.Example.IRCTCWhereismyTrain.widget.SlidingUpPanelLayout>
